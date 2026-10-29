@@ -16,6 +16,46 @@
 .learning-layout{display:grid;grid-template-columns:1fr .8fr;gap:14px}.flashcard{min-height:250px;border:1px solid #dce6f6;border-radius:24px;background:linear-gradient(145deg,#fff,#f0f6ff);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;cursor:pointer;user-select:none}.flashcard .hanzi{font-size:clamp(38px,6vw,58px);font-weight:750;letter-spacing:.04em}.flashcard .pinyin{font-size:18px;color:#5c52cf;margin-top:12px}.flashcard .meaning{font-size:22px;font-weight:700;margin-top:14px}.flashcard .example{font-size:15px;line-height:1.8;margin-top:16px;color:#424248}.flashcard .hint{font-size:12px;color:var(--muted);margin-top:18px}.control-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.control-row button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 13px}.control-row button.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.quiz-option{border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px;text-align:left;line-height:1.5}.quiz-option:hover{border-color:var(--blue)}.quiz-option:disabled{cursor:default;opacity:1}.quiz-option.correct{border-color:#248a3d;background:#eef9f0}.quiz-option.wrong{border-color:#d93025;background:#fff1f0}.feedback{border-radius:14px;background:#f2f7ff;padding:14px;margin-top:14px;font-size:14px;line-height:1.6}.score-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.score-chip{border-radius:12px;background:#f3f3f6;padding:10px 13px;font-size:13px}.progress-list{display:grid;gap:10px}.progress-line{display:flex;justify-content:space-between;gap:12px;font-size:13px}.progress-line .muted{font-size:12px}.prompt-box{background:#111114;color:#fff;border-radius:18px;padding:20px;line-height:1.8}.prompt-box .zh{font-size:22px;font-weight:650}.speech-result{background:#f6f6f8;border-radius:14px;padding:13px;min-height:48px;line-height:1.7;white-space:pre-wrap}.small-status{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.6}
 @media(max-width:760px){.learning-layout{grid-template-columns:1fr}.quiz-options{grid-template-columns:1fr}.flashcard{min-height:225px}}
 
+
+/* Liquid-glass controls + persistent appearance switch */
+:root{--glass:rgba(255,255,255,.62);--glass-border:rgba(255,255,255,.78);--glass-shadow:0 8px 24px rgba(20,35,65,.09),inset 0 1px 0 rgba(255,255,255,.8);--glass-blur:blur(18px) saturate(1.55)}
+button,.subnav a{transition:transform .18s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease}
+button,.subnav a,.pill,.control-row button,.quiz-option{backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);box-shadow:var(--glass-shadow);border:1px solid var(--glass-border);background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(240,244,250,.52));}
+button:hover,.subnav a:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(20,35,65,.13),inset 0 1px 0 rgba(255,255,255,.9)}
+button:active,.subnav a:active{transform:scale(.98)}
+button:focus-visible,.subnav a:focus-visible{outline:3px solid rgba(0,113,227,.35);outline-offset:2px}
+.pill.primary,.control-row button.primary{background:linear-gradient(135deg,rgba(0,113,227,.94),rgba(70,145,255,.78));color:#fff;border-color:rgba(255,255,255,.45);box-shadow:0 8px 20px rgba(0,113,227,.2),inset 0 1px 0 rgba(255,255,255,.35)}
+.quiz-option.correct{background:linear-gradient(135deg,rgba(34,153,84,.17),rgba(255,255,255,.8));border-color:rgba(36,138,61,.55)}
+.quiz-option.wrong{background:linear-gradient(135deg,rgba(217,48,37,.14),rgba(255,255,255,.8));border-color:rgba(217,48,37,.5)}
+.appearance-switch{position:fixed;left:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:999px;background:rgba(248,250,255,.68);border:1px solid rgba(255,255,255,.86);box-shadow:0 12px 36px rgba(20,35,65,.18),inset 0 1px 0 rgba(255,255,255,.9);backdrop-filter:blur(24px) saturate(1.7);-webkit-backdrop-filter:blur(24px) saturate(1.7);color:#1d1d1f;font-size:12px}
+.appearance-switch .mode-label{font-weight:650;min-width:56px}
+.switch-track{width:48px;height:28px;border-radius:99px;border:1px solid rgba(0,0,0,.09);background:#c7c7cc;padding:3px;display:flex;align-items:center;transition:background .2s;box-shadow:inset 0 1px 2px rgba(0,0,0,.12);flex-shrink:0}
+.switch-thumb{width:20px;height:20px;border-radius:50%;background:linear-gradient(145deg,#fff,#e9e9ee);box-shadow:0 2px 5px rgba(0,0,0,.2);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.appearance-switch[aria-checked="true"] .switch-track{background:#0a84ff}
+.appearance-switch[aria-checked="true"] .switch-thumb{transform:translateX(19px)}
+.appearance-switch .mode-icon{font-size:16px;line-height:1}
+body[data-theme="dark"]{--bg:#101114;--surface:#1c1d22;--ink:#f5f5f7;--muted:#a4a5ae;--line:#393a42;--blue:#409cff;--blue2:#202f45;--purple:#a49bff;--green:#53c77b;--orange:#ffb454;--shadow:0 10px 30px rgba(0,0,0,.2);background:var(--bg);color:var(--ink);color-scheme:dark}
+body[data-theme="dark"] .brand span{color:#ffd45a}
+body[data-theme="dark"] .hero-side,body[data-theme="dark"] .card{background:var(--surface);border-color:#34353d;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+body[data-theme="dark"] .subnav a,body[data-theme="dark"] button,body[data-theme="dark"] .pill,body[data-theme="dark"] .control-row button,body[data-theme="dark"] .quiz-option{color:var(--ink);background:linear-gradient(145deg,rgba(55,57,66,.88),rgba(30,31,37,.76));border-color:rgba(255,255,255,.12);box-shadow:0 8px 24px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08)}
+body[data-theme="dark"] .pill.primary,body[data-theme="dark"] .control-row button.primary{background:linear-gradient(135deg,#0879e8,#3b9cff);color:#fff;border-color:rgba(255,255,255,.2)}
+body[data-theme="dark"] .day,body[data-theme="dark"] .task,body[data-theme="dark"] .field input,body[data-theme="dark"] .field select,body[data-theme="dark"] .field textarea,body[data-theme="dark"] .speech-result{background:#24252c;color:var(--ink);border-color:#3a3b44}
+body[data-theme="dark"] .task-meta,body[data-theme="dark"] .score-chip{background:#30313a;color:#c9c9d1}
+body[data-theme="dark"] .flashcard{background:linear-gradient(145deg,#292b33,#1c1e25);border-color:#3a3d49}
+body[data-theme="dark"] .flashcard .example{color:#e2e2e8}
+body[data-theme="dark"] .callout,body[data-theme="dark"] .feedback{background:#202f42;color:#c8e0ff}
+body[data-theme="dark"] .history th,body[data-theme="dark"] .history td{border-color:#373840}
+body[data-theme="dark"] .skill-name{color:#dedee5}
+body[data-theme="dark"] .skill-track,body[data-theme="dark"] .progress{background:#34353d}
+body[data-theme="dark"] .bar{background:#8278ff}
+body[data-theme="dark"] .appearance-switch{background:rgba(35,36,44,.78);border-color:rgba(255,255,255,.16);color:#f5f5f7;box-shadow:0 12px 36px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.12)}
+body[data-theme="dark"] .switch-track{background:#555760;border-color:rgba(255,255,255,.15)}
+body[data-theme="dark"] .appearance-switch[aria-checked="true"] .switch-track{background:#0a84ff}
+body[data-theme="dark"] .quiz-option.correct{background:linear-gradient(135deg,rgba(34,153,84,.26),rgba(35,45,40,.9));border-color:#348b54}
+body[data-theme="dark"] .quiz-option.wrong{background:linear-gradient(135deg,rgba(217,48,37,.22),rgba(48,35,36,.9));border-color:#a94b45}
+@media(max-width:560px){.appearance-switch{left:10px;bottom:10px;padding:9px 11px}.app{padding-bottom:84px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -141,6 +181,13 @@
 <footer class="footer"><div><strong>Top Corner Lab</strong><br>Personal learning dashboard · Version 1.0</div><div>ข้อมูลบันทึกในเครื่องนี้ (local browser storage) · Export JSON เป็น backup เป็นระยะ<br>เว็บนี้ยังไม่ซิงก์ข้อมูลข้ามอุปกรณ์โดยอัตโนมัติ</div></footer>
 </div>
 <div class="toast" id="toast"></div>
+
+<div class="appearance-switch" id="appearanceSwitch" role="switch" tabindex="0" aria-checked="false" aria-label="Toggle dark mode">
+ <span class="mode-icon" id="appearanceIcon" aria-hidden="true">☀</span>
+ <span class="mode-label" id="appearanceLabel">Light mode</span>
+ <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+</div>
+
 <script>
 const KEY='topCornerLabDataV1';
 const defaultTasks=[
@@ -242,6 +289,12 @@ function flipFlashcard(){vocabFlipped=!vocabFlipped;renderFlashcard();}
 function setupSpeechRecognition(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){el('recordStart').disabled=true;el('recordStatus').textContent='เบราว์เซอร์นี้ไม่รองรับ Speech Recognition ในตัว คุณยังฝึกพูดได้โดยกดฟังโจทย์และบันทึกคำตอบด้วยตนเอง';return}recognition=new SR();recognition.lang='zh-CN';recognition.continuous=true;recognition.interimResults=true;recognition.onstart=()=>{el('recordStart').hidden=true;el('recordStop').hidden=false;el('recordStatus').textContent='กำลังฟัง… พูดภาษาจีนได้เลย'};recognition.onresult=e=>{let finalText='',interim='';for(let i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)finalText+=e.results[i][0].transcript;else interim+=e.results[i][0].transcript}el('speechResult').textContent=(finalText||'')+(interim?' '+interim:'')};recognition.onerror=e=>{el('recordStatus').textContent='Speech recognition: '+e.error+'. ตรวจสอบสิทธิ์ไมโครโฟนหรือใช้การบันทึกคำตอบด้วยตนเองได้'};recognition.onend=()=>{el('recordStart').hidden=false;el('recordStop').hidden=true};el('recordStart').onclick=()=>{try{recognition.start()}catch(e){el('recordStatus').textContent='การรู้จำเสียงกำลังทำงานอยู่หรือเบราว์เซอร์ยังไม่พร้อม'}};el('recordStop').onclick=()=>recognition.stop();}
 
 initLearning();
+
+const THEME_KEY='topCornerLabTheme';
+function applyTheme(theme){const dark=theme==='dark';document.body.dataset.theme=dark?'dark':'light';const sw=document.getElementById('appearanceSwitch');if(sw){sw.setAttribute('aria-checked',dark?'true':'false');sw.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode')}const label=document.getElementById('appearanceLabel');if(label)label.textContent=dark?'Dark mode':'Light mode';const icon=document.getElementById('appearanceIcon');if(icon)icon.textContent=dark?'☾':'☀';const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',dark?'#101114':'#f5f5f7');}
+function toggleTheme(){const next=document.body.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem(THEME_KEY,next)}catch(e){}applyTheme(next)}
+(function initTheme(){let theme='light';try{theme=localStorage.getItem(THEME_KEY)||'light'}catch(e){}applyTheme(theme);const sw=document.getElementById('appearanceSwitch');if(sw){sw.addEventListener('click',toggleTheme);sw.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleTheme()}})}})();
+
 render();
 </script>
 </body></html>
