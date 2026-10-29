@@ -1,0 +1,22 @@
+{
+  "name": "Top Corner Lab — Chinese Learning OS",
+  "short_name": "Top Corner Lab",
+  "description": "Personal HSK 5, HSK 6 and HSKK Advanced study dashboard",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f5f7",
+  "theme_color": "#f5f5f7",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

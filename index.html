@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Top Corner Lab — personal Chinese study dashboard for HSK 5, HSK 6 and HSKK Advanced.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Top Corner Lab — Chinese Learning OS</title>
+<style>
+:root{--bg:#f5f5f7;--surface:#fff;--ink:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--blue:#0071e3;--blue2:#e8f2ff;--purple:#8278ff;--green:#248a3d;--orange:#bf6900;--radius:24px;--shadow:0 8px 28px #00000008}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;letter-spacing:-.015em}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1440px;margin:auto;padding:22px 28px 70px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:34px}.brand{font-size:24px;font-weight:750;letter-spacing:-.04em}.brand span{color:#e5a900}.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:5px}.top-actions{display:flex;gap:9px;align-items:center}.pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-size:13px;color:var(--ink)}.pill.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;margin-bottom:18px}.hero-main{background:#111114;color:white;border-radius:30px;padding:32px;min-height:250px;position:relative;overflow:hidden}.hero-main:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #ffffff16;border-radius:50%;right:-70px;top:-110px;box-shadow:0 0 0 35px #ffffff06,0 0 0 70px #ffffff04}.kicker{color:#a8a8b0;text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:650}.hero h1{font-size:clamp(30px,4vw,48px);letter-spacing:-.055em;line-height:1.05;margin:16px 0 12px;max-width:650px}.hero h1 em{font-style:normal;color:#ffd45a}.hero p{color:#c4c4cc;max-width:570px;line-height:1.6;margin:0}.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.tag{font-size:12px;border-radius:99px;padding:7px 10px;background:#ffffff12;color:#e5e5ea}.hero-side{background:var(--surface);border:1px solid #e5e5ea;border-radius:30px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}.small-label{font-size:13px;color:var(--muted)}.big-number{font-size:42px;font-weight:750;letter-spacing:-.06em;margin:10px 0}.progress{height:7px;background:#e8e8ed;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:var(--blue);border-radius:99px;transition:width .25s}.side-bottom{display:flex;justify-content:space-between;gap:12px;margin-top:18px;font-size:12px;color:var(--muted)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:32px 0 14px}.section-head h2{font-size:23px;letter-spacing:-.04em;margin:0}.section-head p{color:var(--muted);font-size:13px;margin:6px 0 0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:var(--surface);border:1px solid #e7e7ec;border-radius:var(--radius);padding:21px;box-shadow:var(--shadow);min-width:0}.metric-label{font-size:13px;color:var(--muted)}.metric-value{font-size:32px;font-weight:730;letter-spacing:-.05em;margin:12px 0 4px}.metric-note{font-size:12px;color:var(--muted)}.metric-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:var(--blue2);color:var(--blue);font-size:17px;margin-bottom:16px}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.skill-list{display:grid;gap:17px;margin-top:18px}.skill-row{display:grid;grid-template-columns:115px 1fr 45px;gap:12px;align-items:center;font-size:13px}.skill-name{color:#424248}.skill-track{height:9px;background:#eeeeF2;border-radius:99px;overflow:hidden}.skill-track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#a49bff,#6d63ee)}.skill-score{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}.callout{background:#f0f6ff;border-radius:16px;padding:14px 16px;color:#24588e;font-size:13px;line-height:1.55;margin-top:18px}.week-summary{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.week-summary strong{font-size:24px;letter-spacing:-.04em}.muted{color:var(--muted)}.schedule{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:16px}.day{border:1px solid #e7e7ec;border-radius:17px;padding:12px 10px;background:#fbfbfd;min-height:125px}.day h4{margin:0 0 10px;font-size:12px;color:var(--muted);font-weight:600}.day .hours{font-size:21px;font-weight:700;letter-spacing:-.04em}.day .focus{font-size:11px;color:var(--muted);line-height:1.4;margin-top:7px}.task-list{display:grid;gap:9px;margin-top:15px}.task{display:flex;align-items:flex-start;gap:12px;border:1px solid #e8e8ed;border-radius:16px;padding:13px;background:#fff}.task input{accent-color:var(--blue);width:18px;height:18px;margin-top:2px;flex-shrink:0}.task.done .task-title{text-decoration:line-through;color:#929299}.task-main{flex:1;min-width:0}.task-title{font-size:14px;font-weight:650;line-height:1.35}.task-detail{font-size:12px;color:var(--muted);line-height:1.5;margin-top:4px}.task-meta{font-size:11px;white-space:nowrap;color:var(--muted);background:#f3f3f6;padding:5px 8px;border-radius:99px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:grid;gap:6px}.field label{font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #0071e31a}.field textarea{min-height:90px;resize:vertical}.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.table-wrap{overflow-x:auto}.history{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}.history th,.history td{text-align:left;padding:12px 10px;border-bottom:1px solid #ededf0;white-space:nowrap}.history th{font-size:11px;color:var(--muted);font-weight:650}.history td:last-child{white-space:normal;min-width:150px}.empty{color:var(--muted);font-size:13px;padding:18px 0}.footer{margin-top:34px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:12px;line-height:1.6}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#202024;color:#fff;padding:12px 17px;border-radius:99px;font-size:13px;box-shadow:0 8px 30px #0002;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}.toast.show{opacity:1}.subnav{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.subnav a{font-size:12px;text-decoration:none;color:var(--muted);background:#fff;border:1px solid #e6e6eb;border-radius:99px;padding:8px 12px}.subnav a:hover{color:var(--blue);border-color:#b7d6ff}.section-note{font-size:12px;color:var(--muted);line-height:1.55}.mini-bars{height:100px;display:flex;align-items:end;gap:8px;margin-top:18px}.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px}.bar{width:100%;max-width:38px;background:#c8c2ff;border-radius:7px 7px 3px 3px;min-height:3px}.bar-label{font-size:10px;color:var(--muted)}.bar-val{font-size:10px;color:var(--muted)}.focus-chip{display:inline-block;background:#f4f2ff;color:#5c52cf;border-radius:99px;padding:5px 8px;font-size:11px;margin:4px 4px 0 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.schedule{grid-template-columns:repeat(4,minmax(0,1fr))}.app{padding:18px 16px 55px}}
+@media(max-width:560px){.app{padding:14px 12px 40px}.topbar{align-items:flex-start;margin-bottom:20px}.brand{font-size:21px}.top-actions .pill:not(.primary){display:none}.hero-main{padding:24px;border-radius:24px;min-height:270px}.hero-side{border-radius:24px}.hero h1{font-size:34px}.section-head{align-items:flex-start;flex-direction:column;margin-top:27px}.grid{gap:9px}.card{padding:16px;border-radius:20px}.metric-value{font-size:28px}.schedule{grid-template-columns:repeat(2,minmax(0,1fr))}.day{min-height:108px}.skill-row{grid-template-columns:95px 1fr 38px;gap:8px}.form-grid{grid-template-columns:1fr}.footer{flex-direction:column}.task-meta{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div><div class="brand">Top Corner <span>Lab</span></div><div class="eyebrow">CHINESE LEARNING OS · HSK 5 — HSK 6 — HSKK ADVANCED</div></div>
+  <div class="top-actions"><button class="pill" id="exportBtn">Export data</button><button class="pill" id="importBtn">Import data</button><button class="pill primary" id="installBtn" hidden>Install app</button><input type="file" id="importFile" accept="application/json" hidden></div>
+</header>
+
+<section class="hero">
+  <div class="hero-main"><div class="kicker">Your next level starts here</div><h1>Build Chinese.<br><em>One focused hour at a time.</em></h1><p>ระบบเรียนภาษาจีนส่วนตัวที่เปลี่ยนเวลา 17 ชั่วโมงต่อสัปดาห์ ให้กลายเป็นการฝึกที่วัดผลได้ ทั้งการอ่าน เขียน ฟัง และพูด</p><div class="hero-meta"><span class="tag">17 hrs / week</span><span class="tag">HSK 5 → HSK 6</span><span class="tag">HSKK Advanced</span><span class="tag">Mobile-ready</span></div></div>
+  <div class="hero-side"><div><div class="small-label">Weekly learning target</div><div class="big-number"><span id="weekHours">0</span><small style="font-size:19px;color:var(--muted)"> / 17 h</small></div><div class="progress"><span id="weekProgress" style="width:0%"></span></div></div><div class="side-bottom"><span id="weekStatus">เริ่มบันทึกการฝึกของคุณ</span><span id="weekPercent">0%</span></div></div>
+</section>
+
+<nav class="subnav"><a href="#overview">Overview</a><a href="#skills">Skill map</a><a href="#plan">Weekly plan</a><a href="#today">Today's practice</a><a href="#log">Progress log</a><a href="#method">Study system</a></nav>
+
+<section id="overview">
+<div class="section-head"><div><h2>Your learning overview</h2><p>ภาพรวมความคืบหน้า — ตัวเลขจะอัปเดตจากข้อมูลที่คุณบันทึก</p></div><span class="section-note" id="todayDate"></span></div>
+<div class="grid">
+ <div class="card"><div class="metric-icon">◷</div><div class="metric-label">Total study time</div><div class="metric-value" id="totalHours">0.0 h</div><div class="metric-note">เวลาฝึกที่บันทึกทั้งหมด</div></div>
+ <div class="card"><div class="metric-icon">↗</div><div class="metric-label">Sessions completed</div><div class="metric-value" id="sessionCount">0</div><div class="metric-note">จำนวนครั้งที่ฝึก</div></div>
+ <div class="card"><div class="metric-icon">✳</div><div class="metric-label">Average focus</div><div class="metric-value" id="avgFocus">—</div><div class="metric-note">คะแนนสมาธิเฉลี่ย / 5</div></div>
+ <div class="card"><div class="metric-icon">◎</div><div class="metric-label">Vocabulary reviewed</div><div class="metric-value" id="vocabTotal">0</div><div class="metric-note">คำศัพท์ที่ทบทวน (สะสม)</div></div>
+</div>
+</section>
+
+<section id="skills">
+<div class="section-head"><div><h2>Skill map</h2><p>ใช้กราฟต้นฉบับเป็น baseline โดยประมาณ ไม่ใช่คะแนนสอบมาตรฐาน</p></div></div>
+<div class="two-col">
+ <div class="card"><div class="small-label">Baseline → target</div><div class="skill-list" id="skillBars"></div><div class="callout"><strong>Priority:</strong> Reading → Speaking → Writing → Listening (จากกราฟตั้งต้น) แต่ให้ฝึกครบทั้ง 4 ทักษะทุกสัปดาห์ เพราะ HSK 5/6 และ HSKK ต้องใช้ทักษะที่เชื่อมโยงกัน</div></div>
+ <div class="card"><div class="small-label">Suggested weekly allocation</div><div class="big-number">17.0 <small style="font-size:17px;color:var(--muted)">hours</small></div><div class="section-note">จัดเวลาให้ทักษะที่ต้องเร่งพัฒนา แต่ไม่ปล่อยทักษะอื่นทิ้ง</div><div style="margin-top:15px"><span class="focus-chip">Reading · 5 h</span><span class="focus-chip">Speaking · 4 h</span><span class="focus-chip">Listening · 3 h</span><span class="focus-chip">Writing · 3 h</span><span class="focus-chip">Vocab & review · 2 h</span></div><div class="section-note" style="margin-top:18px">หมายเหตุ: กราฟระบุ HSK 5 = 54.5% แต่ไม่บอกวิธีคำนวณหรือคะแนนแยกทักษะที่ผ่านการสอบ จึงใช้ค่าจากรูปเป็นเพียงค่าประเมินเริ่มต้น</div></div>
+</div>
+</section>
+
+<section id="plan">
+<div class="section-head"><div><h2>Your 17-hour week</h2><p>แผนเริ่มต้นแบบสมดุล — ปรับเวลาได้ตามตารางจริง</p></div><div class="week-summary"><strong>17 h</strong><span class="muted">· 7 days</span></div></div>
+<div class="card">
+<div class="schedule">
+ <div class="day"><h4>MON · จันทร์</h4><div class="hours">2.5 h</div><div class="focus">Reading + vocab<br>อ่านจับใจความ / คำศัพท์</div></div>
+ <div class="day"><h4>TUE · อังคาร</h4><div class="hours">2.5 h</div><div class="focus">Listening + shadowing<br>ฟังซ้ำ / เลียนแบบเสียง</div></div>
+ <div class="day"><h4>WED · พุธ</h4><div class="hours">2.5 h</div><div class="focus">Writing + grammar<br>เขียนสรุป / แก้ข้อผิดพลาด</div></div>
+ <div class="day"><h4>THU · พฤหัส</h4><div class="hours">2.5 h</div><div class="focus">Speaking + timed response<br>ตอบตามเวลา / อัดเสียง</div></div>
+ <div class="day"><h4>FRI · ศุกร์</h4><div class="hours">2.5 h</div><div class="focus">Reading + listening<br>ฝึกโจทย์จับเวลา</div></div>
+ <div class="day"><h4>SAT · เสาร์</h4><div class="hours">3 h</div><div class="focus">Mock test + writing<br>ทำชุดฝึก / วิเคราะห์ข้อผิด</div></div>
+ <div class="day"><h4>SUN · อาทิตย์</h4><div class="hours">1.5 h</div><div class="focus">Review + weekly reflection<br>ทบทวน / วางแผนสัปดาห์หน้า</div></div>
+</div>
+<p class="section-note" style="margin:15px 0 0">หลักการ: 70% ฝึกใช้งานจริงและทำโจทย์, 20% ตรวจข้อผิดพลาด, 10% เรียนเนื้อหาใหม่ อย่าใช้เวลาทั้งหมดไปกับการอ่านเฉลยหรือจำศัพท์อย่างเดียว</p>
+</div>
+</section>
+
+<section id="today">
+<div class="section-head"><div><h2>Today's practice</h2><p>เช็กลิสต์ตัวอย่างสำหรับรอบการฝึก 2–2.5 ชั่วโมง · ติ๊กเมื่อทำเสร็จ</p></div><button class="pill" id="resetTasks">Reset checklist</button></div>
+<div class="card"><div class="task-list" id="taskList"></div><div class="form-actions"><button class="pill primary" id="saveTasks">Save checklist</button><span class="section-note" id="taskStatus" style="align-self:center"></span></div></div>
+</section>
+
+<section id="log">
+<div class="section-head"><div><h2>Progress log</h2><p>บันทึกหลังฝึกทุกครั้ง เพื่อดูว่าพัฒนาจริงจากอะไรและตรงไหนยังติดขัด</p></div></div>
+<div class="two-col">
+ <div class="card"><div class="small-label">Add a study session</div><form id="logForm" style="margin-top:15px">
+  <div class="form-grid">
+   <div class="field"><label for="logDate">Date</label><input id="logDate" type="date" required></div>
+   <div class="field"><label for="logSkill">Skill</label><select id="logSkill"><option>Reading</option><option>Writing</option><option>Listening</option><option>Speaking</option><option>Vocabulary</option><option>Mock test</option></select></div>
+   <div class="field"><label for="logMinutes">Minutes studied</label><input id="logMinutes" type="number" min="1" max="600" value="45" required></div>
+   <div class="field"><label for="logFocus">Focus (1–5)</label><select id="logFocus"><option value="5">5 · Excellent</option><option value="4" selected>4 · Good</option><option value="3">3 · Okay</option><option value="2">2 · Distracted</option><option value="1">1 · Low</option></select></div>
+   <div class="field"><label for="logVocab">Words reviewed</label><input id="logVocab" type="number" min="0" value="20"></div>
+   <div class="field"><label for="logAccuracy">Accuracy (%) · optional</label><input id="logAccuracy" type="number" min="0" max="100" placeholder="เช่น 72"></div>
+  </div>
+  <div class="field" style="margin-top:12px"><label for="logNotes">What did you learn / what was difficult?</label><textarea id="logNotes" placeholder="เช่น อ่านบทความได้เร็วขึ้น แต่ยังสับสนคำเชื่อม 因此 / 尽管…"></textarea></div>
+  <div class="form-actions"><button class="pill primary" type="submit">Add to progress log</button></div>
+ </form></div>
+ <div class="card"><div class="small-label">Last 7 recorded days</div><div class="mini-bars" id="weekBars"></div><div class="section-head" style="margin:24px 0 8px"><div><h2 style="font-size:17px">Latest insight</h2></div></div><div id="insight" class="section-note">เมื่อคุณเริ่มบันทึก ระบบจะแสดงแนวโน้มและคำแนะนำจากข้อมูลของคุณที่นี่</div></div>
+</div>
+<div class="card" style="margin-top:14px"><div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><div class="small-label">Study history</div><div class="section-note">ข้อมูลถูกเก็บไว้ใน browser บนอุปกรณ์นี้โดยอัตโนมัติ</div></div><button class="pill" id="clearLogs">Clear history</button></div><div class="table-wrap"><table class="history"><thead><tr><th>Date</th><th>Skill</th><th>Time</th><th>Focus</th><th>Accuracy</th><th>Notes</th><th></th></tr></thead><tbody id="historyBody"></tbody></table></div><div id="emptyHistory" class="empty">ยังไม่มีข้อมูล — เพิ่ม study session แรกของคุณได้เลย</div></div>
+</section>
+
+<section id="method">
+<div class="section-head"><div><h2>The study system</h2><p>วิธีฝึกที่แนะนำสำหรับ HSK 5 → HSK 6 และ HSKK Advanced</p></div></div>
+<div class="grid">
+ <div class="card"><div class="metric-icon">01</div><h3 style="margin:0 0 9px;font-size:16px">Reading · 5 h/wk</h3><p class="section-note">อ่านบทความ/ข่าวระดับสูงแบบจับเวลา จับ main idea, โครงสร้างเหตุผล และคำเชื่อม จดคำศัพท์จากบริบท แล้วสรุปใจความภาษาจีน 3–5 ประโยค</p><div class="section-note"><strong>Track:</strong> accuracy, time per passage, summary quality</div></div>
+ <div class="card"><div class="metric-icon">02</div><h3 style="margin:0 0 9px;font-size:16px">Speaking · 4 h/wk</h3><p class="section-note">ฝึกตอบ prompt แบบมีเวลาเตรียมและเวลาพูดจริง อัดเสียง 2–3 นาที ฟังย้อนและให้คะแนนความคล่อง ความชัด โครงสร้าง และตัวอย่างที่สนับสนุนคำตอบ</p><div class="section-note"><strong>Track:</strong> pauses, filler words, completion, clarity</div></div>
+ <div class="card"><div class="metric-icon">03</div><h3 style="margin:0 0 9px;font-size:16px">Listening · 3 h/wk</h3><p class="section-note">ฟังรอบแรกโดยไม่ดู transcript เพื่อจับใจความ รอบสองจด keyword รอบสามตรวจ transcript แล้ว shadowing 30–60 วินาทีจากคลิปเดิม</p><div class="section-note"><strong>Track:</strong> gist accuracy, missed keywords</div></div>
+ <div class="card"><div class="metric-icon">04</div><h3 style="margin:0 0 9px;font-size:16px">Writing · 3 h/wk</h3><p class="section-note">เขียนสรุป/แสดงความคิดเห็นตามโจทย์ ใช้โครงสร้างประเด็น–เหตุผล–ตัวอย่าง–สรุป ตรวจคำเชื่อม collocation และข้อผิดพลาดซ้ำ เขียนฉบับแก้ไขอีกครั้ง</p><div class="section-note"><strong>Track:</strong> organization, grammar errors, rewrite quality</div></div>
+</div>
+<div class="two-col" style="margin-top:14px">
+ <div class="card"><h3 style="margin-top:0">Vocabulary & error notebook · 2 h/wk</h3><p class="section-note">ทบทวนด้วย spaced repetition เช่น Anki หรือบัตรคำของตนเอง เน้นคำที่พบซ้ำจากบทอ่าน/เสียงจริง จดคำจีน + pinyin + ความหมาย + collocation + ประโยคตัวอย่าง อย่าจำแค่คำแปล</p><p class="section-note">ทุกสัปดาห์ แยกข้อผิดพลาดเป็น 3 หมวด: ไม่รู้คำศัพท์ / เข้าใจโครงสร้างผิด / พลาดเพราะเวลา แล้วเลือกแก้ 1–2 จุดหลักในสัปดาห์ถัดไป</p></div>
+ <div class="card"><h3 style="margin-top:0">12-week roadmap</h3><div class="task-list">
+  <div class="task"><div class="task-main"><div class="task-title">Weeks 1–2 · Diagnose</div><div class="task-detail">ทำชุดวัดระดับย่อยทุกทักษะ สร้าง error log และตั้ง baseline จริง</div></div></div>
+  <div class="task"><div class="task-main"><div class="task-title">Weeks 3–6 · Build</div><div class="task-detail">ฝึกจุดอ่อนด้วยโจทย์ระดับ HSK 5–6 และ output ทุกครั้ง: สรุป เขียน หรือพูด</div></div></div>
+  <div class="task"><div class="task-main"><div class="task-title">Weeks 7–10 · Integrate</div><div class="task-detail">เพิ่มการฝึกจับเวลาและเชื่อมอ่าน→พูด / ฟัง→เขียน สัปดาห์ละ 1 mini mock</div></div></div>
+  <div class="task"><div class="task-main"><div class="task-title">Weeks 11–12 · Exam mode</div><div class="task-detail">ทำ mock test ภายใต้เวลาจริง วิเคราะห์ข้อผิดพลาด และปรับกลยุทธ์รายพาร์ต</div></div></div>
+ </div></div>
+</div>
+<div class="callout" style="margin-top:14px"><strong>Review every Sunday:</strong> (1) ฝึกครบกี่ชั่วโมงจาก 17? (2) ทักษะไหนมีหลักฐานว่าดีขึ้น? (3) ข้อผิดพลาดที่เจอบ่อยที่สุดคืออะไร? (4) สัปดาห์หน้าจะเปลี่ยนวิธีฝึกอะไรเพียง 1 อย่าง? คะแนน HSK/HSKK ควรวัดด้วย mock test หรือเกณฑ์ทางการเป็นระยะ ไม่ใช่ชั่วโมงเรียนอย่างเดียว</div>
+</section>
+<footer class="footer"><div><strong>Top Corner Lab</strong><br>Personal learning dashboard · Version 1.0</div><div>ข้อมูลบันทึกในเครื่องนี้ (local browser storage) · Export JSON เป็น backup เป็นระยะ<br>เว็บนี้ยังไม่ซิงก์ข้อมูลข้ามอุปกรณ์โดยอัตโนมัติ</div></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='topCornerLabDataV1';
+const defaultTasks=[
+ {title:'Reading sprint',detail:'อ่านบทความระดับ HSK 5–6 1 ชิ้น จับเวลาและสรุปใจความ 3–5 ประโยค',time:'35 min'},
+ {title:'Vocabulary in context',detail:'เก็บคำศัพท์ 10–15 คำ พร้อม collocation และประโยคตัวอย่าง',time:'20 min'},
+ {title:'Listening: 3-pass method',detail:'ฟังโดยไม่ดู transcript → จด keyword → ตรวจ transcript',time:'30 min'},
+ {title:'Speaking recording',detail:'ตอบ prompt 1 ข้อ อัดเสียง 2–3 นาที แล้วจดจุดที่ต้องแก้ 2 จุด',time:'25 min'},
+ {title:'Error review',detail:'ทบทวนข้อผิดพลาดเก่าและแก้ประโยค/คำตอบใหม่',time:'15 min'}
+];
+let state=loadState();
+function loadState(){try{return JSON.parse(localStorage.getItem(KEY))||{logs:[],tasks:{}}}catch(e){return {logs:[],tasks:{}}}}
+function saveState(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){const t=el('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function localDate(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function renderTasks(){el('taskList').innerHTML=defaultTasks.map((t,i)=>`<label class="task ${state.tasks[localDate()]?.[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[localDate()]?.[i]?'checked':''}><div class="task-main"><div class="task-title">${t.title}</div><div class="task-detail">${t.detail}</div></div><span class="task-meta">${t.time}</span></label>`).join('');el('taskStatus').textContent=`${Object.values(state.tasks[localDate()]||{}).filter(Boolean).length} / ${defaultTasks.length} tasks complete`}
+function render(){const logs=[...state.logs].sort((a,b)=>a.date.localeCompare(b.date));const total=logs.reduce((s,l)=>s+Number(l.minutes||0),0);const weekStart=new Date();weekStart.setDate(weekStart.getDate()-6);weekStart.setHours(0,0,0,0);const weekLogs=logs.filter(l=>new Date(l.date+'T00:00:00')>=weekStart);const wh=weekLogs.reduce((s,l)=>s+Number(l.minutes||0),0)/60;el('weekHours').textContent=wh.toFixed(1);el('weekProgress').style.width=Math.min(100,wh/17*100)+'%';el('weekPercent').textContent=Math.round(wh/17*100)+'%';el('weekStatus').textContent=wh>=17?'เป้าหมายรายสัปดาห์สำเร็จ':`${(17-wh).toFixed(1)} h remaining`;el('totalHours').textContent=(total/60).toFixed(1)+' h';el('sessionCount').textContent=logs.length;el('avgFocus').textContent=logs.length?(logs.reduce((s,l)=>s+Number(l.focus||0),0)/logs.length).toFixed(1)+'/5':'—';el('vocabTotal').textContent=logs.reduce((s,l)=>s+Number(l.vocab||0),0).toLocaleString();
+const skills=[['Reading',45,85],['Writing',65,80],['Listening',60,80],['Speaking',40,85]];el('skillBars').innerHTML=skills.map(([n,v,t])=>`<div class="skill-row"><span class="skill-name">${n}</span><div class="skill-track"><span style="width:${v}%"></span></div><span class="skill-score">${v}%</span></div>`).join('')+`<div class="section-note">Target: 80–85% ในแบบฝึกที่มีระดับและเงื่อนไขใกล้เคียงกัน</div>`;
+const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const key=localDate(d);const mins=logs.filter(l=>l.date===key).reduce((s,l)=>s+Number(l.minutes||0),0);days.push({label:d.toLocaleDateString('en-US',{weekday:'short'}),mins})}const max=Math.max(60,...days.map(d=>d.mins));el('weekBars').innerHTML=days.map(d=>`<div class="bar-col"><span class="bar-val">${d.mins?Math.round(d.mins/60*10)/10+'h':'·'}</span><div class="bar" style="height:${Math.max(3,d.mins/max*67)}px"></div><span class="bar-label">${d.label}</span></div>`).join('');
+el('historyBody').innerHTML=logs.slice().reverse().map(l=>`<tr><td>${esc(l.date)}</td><td>${esc(l.skill)}</td><td>${(l.minutes/60).toFixed(2)} h</td><td>${esc(l.focus)}/5</td><td>${l.accuracy===''?'—':esc(l.accuracy)+'%'}</td><td>${esc(l.notes||'—')}</td><td><button class="pill" data-delete="${esc(l.id)}" style="padding:6px 9px">Delete</button></td></tr>`).join('');el('emptyHistory').style.display=logs.length?'none':'block';
+const recent=logs.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,8);if(!recent.length){el('insight').textContent='เมื่อคุณเริ่มบันทึก ระบบจะแสดงแนวโน้มและคำแนะนำจากข้อมูลของคุณที่นี่'}else{const by={};recent.forEach(l=>{by[l.skill]??=[];by[l.skill].push(l)});const best=Object.entries(by).sort((a,b)=>b[1].reduce((s,l)=>s+(+l.focus),0)/b[1].length-a[1].reduce((s,l)=>s+(+l.focus),0)/a[1].length)[0];const low=Object.entries(by).sort((a,b)=>a[1].reduce((s,l)=>s+(+l.focus),0)/a[1].length-b[1].reduce((s,l)=>s+(+l.focus),0)/b[1].length)[0];el('insight').textContent=`จาก ${recent.length} sessions ล่าสุด: ทักษะที่มี focus เฉลี่ยสูงสุดคือ ${best[0]} (${(best[1].reduce((s,l)=>s+(+l.focus),0)/best[1].length).toFixed(1)}/5); ต่ำสุดคือ ${low[0]} (${(low[1].reduce((s,l)=>s+(+l.focus),0)/low[1].length).toFixed(1)}/5). ใช้ข้อมูลนี้ประกอบการปรับวิธีฝึก ไม่ใช่สรุปความสามารถจาก focus เพียงอย่างเดียว.`}
+renderTasks()}
+el('todayDate').textContent=new Date().toLocaleDateString('th-TH',{weekday:'long',year:'numeric',month:'long',day:'numeric'});el('logDate').value=localDate();
+el('taskList').addEventListener('change',e=>{const i=e.target.dataset.task;if(i===undefined)return;state.tasks[localDate()]??={};state.tasks[localDate()][i]=e.target.checked;localStorage.setItem(KEY,JSON.stringify(state));renderTasks()});
+el('saveTasks').onclick=()=>{localStorage.setItem(KEY,JSON.stringify(state));toast('Checklist saved on this device')};
+el('resetTasks').onclick=()=>{if(confirm('Reset today’s checklist?')){delete state.tasks[localDate()];saveState();toast('Checklist reset')}};
+el('logForm').addEventListener('submit',e=>{e.preventDefault();state.logs.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),date:el('logDate').value,skill:el('logSkill').value,minutes:Number(el('logMinutes').value),focus:Number(el('logFocus').value),vocab:Number(el('logVocab').value||0),accuracy:el('logAccuracy').value,notes:el('logNotes').value.trim()});saveState();el('logNotes').value='';el('logAccuracy').value='';toast('Study session added')});
+el('historyBody').addEventListener('click',e=>{const id=e.target.dataset.delete;if(!id)return;if(confirm('Delete this study session?')){state.logs=state.logs.filter(l=>l.id!==id);saveState();toast('Session deleted')}});
+el('clearLogs').onclick=()=>{if(confirm('Delete all study history? Export a backup first if needed.')){state.logs=[];saveState();toast('History cleared')}};
+el('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='top-corner-lab-backup.json';a.click();URL.revokeObjectURL(a.href);toast('Backup exported')};
+el('importBtn').onclick=()=>el('importFile').click();el('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const incoming=JSON.parse(await f.text());if(!Array.isArray(incoming.logs))throw Error('Invalid file');if(confirm('Import backup and replace current data?')){state={logs:incoming.logs,tasks:incoming.tasks||{}};saveState();toast('Backup imported')}}catch(err){alert('Import failed: please select a Top Corner Lab JSON backup.')}e.target.value=''};
+let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;el('installBtn').hidden=false});el('installBtn').onclick=async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;el('installBtn').hidden=true}else toast('เปิดเมนู Share / Add to Home Screen ในเบราว์เซอร์')};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+render();
+</script>
+</body></html>
